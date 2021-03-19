@@ -7,6 +7,21 @@ import styled from "styled-components";
 // Components
 import CharacterContainer from "./components/CharacterContainer";
 
+const PageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100vh;
+  margin: 2rem;
+
+  h1 {
+    font-size: 7rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+`;
+
 const App = () => {
   // Top level states
   const [charList, setCharList] = useState([]);
@@ -25,21 +40,6 @@ const App = () => {
   //     return charList.homeworld;
   //   });
   // };
-
-  const PageContainer = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-height: 100vh;
-    margin: 2rem;
-
-    h1 {
-      font-size: 7rem;
-    }
-    h2 {
-      font-size: 2.4rem;
-    }
-  `;
 
   return (
     <PageContainer className="App">
