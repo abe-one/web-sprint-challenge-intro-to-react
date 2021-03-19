@@ -49,7 +49,7 @@ You are expected to be able to answer questions in these areas. Your responses c
 ### Task 1: Project Set Up
 
 - [x] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
+- [?] Add your team lead as collaborator on Github
 - [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
 - [x] Create a new branch: `git checkout -b <firstName-lastName>`.
 - [x] Run `npm install` to retrieve all needed dependencies.
@@ -66,8 +66,8 @@ Your finished project must include all of the following requirements:
 - [x] Use the following API:
   - [Star Wars API](https://swapi.dev/)
 - [x] Use the documentation and Google to learn how to fetch characters from your API.
-- [ ] Obtain a list of characters. One or several requests might be needed, depending on the API.
-- [ ] Set the list of characters into state.
+- [x] Obtain a list of characters. One or several requests might be needed, depending on the API.
+- [x] Set the list of characters into state.
 - [ ] Render your characters to the screen:
   - Build a React component named 'Character' to render an individual character.
   - Map over the list in state, and for each character render a Character to the page.
