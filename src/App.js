@@ -20,13 +20,18 @@ const App = () => {
       .finally();
   }, []);
 
+  // const getHomeworlds = () => {
+  //   charList.map((char) => {
+  //     return charList.homeworld;
+  //   });
+  // };
+
   const PageContainer = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
     max-height: 100vh;
-    margin-top: 2rem;
-    /* align-content: center; */
+    margin: 2rem;
 
     h1 {
       font-size: 7rem;

@@ -11,6 +11,7 @@ const CharacterContainerDiv = styled.div`
 `;
 
 const CharacterContainer = ({ charList }) => {
+  if (!charList) return <h3>Loading..</h3>;
   return (
     <CharacterContainerDiv className="Character-Container">
       {charList.map((char) => {
