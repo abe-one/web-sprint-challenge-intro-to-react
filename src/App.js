@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import styled from "styled-components";
 // Components
-import Character from "./components/Character";
 import CharacterContainer from "./components/CharacterContainer";
 
 const App = () => {
@@ -28,7 +27,10 @@ const App = () => {
     flex-direction: column;
 
     h1 {
-      font-size: 5rem;
+      font-size: 7rem;
+    }
+    h2 {
+      font-size: 2.4rem;
     }
   `;
 
