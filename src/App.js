@@ -1,13 +1,17 @@
+// Dependencies
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+// Styling
 import "./App.css";
+import styled from "styled-components";
+// Components
 import Character from "./components/Character";
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+  // Top level states
   const [charList, setCharList] = useState([]);
 
+  // API Fetch
   useEffect(() => {
     axios
       .get(`http://swapi.dev/api/people/`)
@@ -15,17 +19,22 @@ const App = () => {
       .catch((err) => alert(err))
       .finally();
   }, []);
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+
+  const PageContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  `;
 
   return (
-    <div className="App">
+    <PageContainer className="App">
       <h1 className="Header">Characters</h1>
-      {charList.map((char) => {
-        return <Character char={char} key={char.url} />;
-      })}
-    </div>
+      <div className="Character-Container">
+        {charList.map((char) => {
+          return <Character char={char} key={char.url} />;
+        })}
+      </div>
+    </PageContainer>
   );
 };
 
