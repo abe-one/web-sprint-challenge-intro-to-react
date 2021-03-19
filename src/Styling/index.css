@@ -129,7 +129,7 @@ table {
 * {
   box-sizing: border-box;
   max-width: 100%;
-  border: 1px solid orangered;
+  /* border: 1px solid orangered; */
 }
 
 html {

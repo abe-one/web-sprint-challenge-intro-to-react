@@ -25,7 +25,7 @@ const App = () => {
     align-items: center;
     flex-direction: column;
     max-height: 100vh;
-    margin-top: 1rem;
+    margin-top: 2rem;
     /* align-content: center; */
 
     h1 {
