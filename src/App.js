@@ -23,8 +23,10 @@ const App = () => {
   const PageContainer = styled.div`
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     flex-direction: column;
+    max-height: 100vh;
+    margin-top: 1rem;
+    /* align-content: center; */
 
     h1 {
       font-size: 7rem;
@@ -36,7 +38,7 @@ const App = () => {
 
   return (
     <PageContainer className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">Pre Sequel Character Sheet</h1>
       <CharacterContainer charList={charList} />
     </PageContainer>
   );
