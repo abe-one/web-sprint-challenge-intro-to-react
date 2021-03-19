@@ -1,7 +1,9 @@
 // This is for the fake API. Do not delete!
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./Styling/index.css";
+import { ThemeProvider } from "styled-components";
+
 import App from "./App";
 
 import { worker } from "./mocks/browser";
