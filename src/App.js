@@ -6,6 +6,7 @@ import "./App.css";
 import styled from "styled-components";
 // Components
 import Character from "./components/Character";
+import CharacterContainer from "./components/CharacterContainer";
 
 const App = () => {
   // Top level states
@@ -24,16 +25,17 @@ const App = () => {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
+
+    h1 {
+      font-size: 5rem;
+    }
   `;
 
   return (
     <PageContainer className="App">
       <h1 className="Header">Characters</h1>
-      <div className="Character-Container">
-        {charList.map((char) => {
-          return <Character char={char} key={char.url} />;
-        })}
-      </div>
+      <CharacterContainer charList={charList} />
     </PageContainer>
   );
 };
