@@ -6,7 +6,7 @@ const CharacterContainerDiv = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 90vh;
+  max-height: 80vh;
   align-content: center;
 `;
 

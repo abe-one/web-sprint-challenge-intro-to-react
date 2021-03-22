@@ -25,21 +25,56 @@ const PageContainer = styled.div`
 const App = () => {
   // Top level states
   const [charList, setCharList] = useState([]);
+  const [updatedCharlist, SetUpdatedCharlist] = useState([]);
+
+  const getHomeworlds = (apiARR) => {
+    let homeworlds = apiARR.map((char) => {
+      return char.homeworld;
+    }); // homeworlds is assigned the value of an array of URLs linking to homeworld objects, some may repeat
+    let uniqueHomeworlds = new Set(homeworlds); // To prevent API repeats, uniqueHomeworlds is assigned a set object of the unique URLS
+    uniqueHomeworlds = Array.from(uniqueHomeworlds); // Convert to array
+    // console.log(uniqueHomeworlds);
+    let homeworldObjs = [];
+    uniqueHomeworlds.map((URL) => {
+      axios
+        .get(URL)
+        .then((res) => {
+          console.log(res.data);
+          homeworldObjs.push(res.data);
+        })
+        .catch((err) => {
+          homeworldObjs.push({
+            url: URL,
+            name: "Error retrieving planetary resource",
+          });
+          console.log(URL, err);
+        });
+    });
+    // return homeworldObjs; //Array of homeworld objs
+    let listAndWorlds = apiARR.map((char) => {
+      let fullWorld = homeworldObjs.find(({ url }) => url === char.url); // Return world obj that matches char world URL
+      char.homeworld = fullWorld;
+      return char;
+    });
+    SetUpdatedCharlist(listAndWorlds);
+  };
 
   // API Fetch
   useEffect(() => {
     axios
       .get(`http://swapi.dev/api/people/`)
-      .then((res) => setCharList(res.data.results))
-      .catch((err) => alert(err))
-      .finally();
+      .then((res) => {
+        setCharList(res.data.results);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
-  // const getHomeworlds = () => {
-  //   charList.map((char) => {
-  //     return charList.homeworld;
-  //   });
-  // };
+  useEffect(() => {
+    if (!charList) {
+      console.log("Loading Charlist");
+    }
+    console.log(getHomeworlds(charList));
+  }, [charList]);
 
   return (
     <PageContainer className="App">
